@@ -125,27 +125,20 @@
             </objects>
             <point key="canvasLocation" x="435" y="-481"/>
         </scene>
-        <!--Villain Collection View Controller-->
+        <!--Villains Collection View Controller-->
         <scene sceneID="MSY-n9-t0d">
             <objects>
-                <collectionViewController id="I4B-r3-UDX" customClass="VillainCollectionViewController" customModule="BondVillains" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="I4B-r3-UDX" customClass="VillainsCollectionViewController" customModule="BondVillains" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Un2-4g-IC5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ACb-zN-lKi">
-                            <size key="itemSize" width="128" height="128"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="30" minimumInteritemSpacing="10" id="ACb-zN-lKi">
+                            <size key="itemSize" width="128" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wf8-OV-Ymy">
-                            <rect key="frame" x="0.0" y="-88" width="414" height="896"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VillainCollectionViewCell" id="CJb-hx-qY6" customClass="VillainCollectionViewCell" customModule="BondVillains" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -154,15 +147,42 @@
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Bq-Qb-JGg">
-                                            <rect key="frame" x="10" y="28" width="80" height="64"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Bq-Qb-JGg">
+                                            <rect key="frame" x="8" y="8" width="112" height="112"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="64" id="KRV-qc-bjS"/>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="xd5-cP-SVO"/>
+                                            </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="nameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFw-yX-7Tr">
+                                            <rect key="frame" x="10" y="70" width="110" height="21"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="schemeLabel" textAlignment="natural" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPc-K8-9gb">
+                                            <rect key="frame" x="43" y="53" width="102" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="8Bq-Qb-JGg" firstAttribute="bottom" secondItem="CJb-hx-qY6" secondAttribute="bottomMargin" constant="-15" id="1zE-u4-dMp"/>
+                                    <constraint firstItem="8Bq-Qb-JGg" firstAttribute="top" secondItem="CJb-hx-qY6" secondAttribute="topMargin" constant="-10" id="5vP-bd-zjn"/>
+                                    <constraint firstItem="UPc-K8-9gb" firstAttribute="top" secondItem="oFw-yX-7Tr" secondAttribute="bottom" constant="-3" id="AhI-pI-nHo"/>
+                                    <constraint firstItem="UPc-K8-9gb" firstAttribute="leading" secondItem="CJb-hx-qY6" secondAttribute="leading" constant="10" id="G6j-ZB-FxH"/>
+                                    <constraint firstItem="oFw-yX-7Tr" firstAttribute="top" secondItem="CJb-hx-qY6" secondAttribute="bottom" constant="-25" id="GMM-bQ-uBv"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="oFw-yX-7Tr" secondAttribute="trailing" id="Oly-qS-Fyn"/>
+                                    <constraint firstItem="oFw-yX-7Tr" firstAttribute="leading" secondItem="CJb-hx-qY6" secondAttribute="leading" constant="10" id="YUz-a1-5EG"/>
+                                    <constraint firstItem="8Bq-Qb-JGg" firstAttribute="leading" secondItem="CJb-hx-qY6" secondAttribute="leadingMargin" id="btD-0M-Gam"/>
+                                    <constraint firstItem="8Bq-Qb-JGg" firstAttribute="trailing" secondItem="CJb-hx-qY6" secondAttribute="trailingMargin" id="z66-1h-6tP"/>
+                                </constraints>
                                 <size key="customSize" width="128" height="128"/>
                                 <connections>
-                                    <outlet property="nameLabel" destination="Wf8-OV-Ymy" id="j3f-7Z-U6U"/>
+                                    <outlet property="nameLabel" destination="oFw-yX-7Tr" id="NgO-3N-4ub"/>
+                                    <outlet property="schemeLabel" destination="UPc-K8-9gb" id="OFv-vn-xQJ"/>
                                     <outlet property="villainImageView" destination="8Bq-Qb-JGg" id="31Q-1Z-gjR"/>
                                 </connections>
                             </collectionViewCell>

@@ -35,7 +35,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // If the cell has a detail label, we will put the evil scheme in.
         if let detailTextLabel = cell.detailTextLabel {
-            detailTextLabel.text = "Scheme: \(villain.evilScheme)"
+            detailTextLabel.text = "\(villain.evilScheme)"
         }
         
         return cell

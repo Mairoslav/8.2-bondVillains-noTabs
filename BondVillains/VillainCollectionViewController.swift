@@ -49,7 +49,7 @@ class VillainsCollectionViewController: UICollectionViewController {
         
         cell.nameLabel.text = villain.name
         cell.villainImageView?.image = UIImage(named: villain.imageName)
-        // cell.schemeLabel.text = "Scheme: \(villain.evilScheme)"
+        cell.schemeLabel.text = "\(villain.evilScheme)"
         
         return cell
     }
